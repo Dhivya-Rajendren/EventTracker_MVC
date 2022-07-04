@@ -1,0 +1,17 @@
+﻿@model EventTracker_MVC.ViewModels.SpeakerViewModel
+
+    <p class="alert alert-info display-1"> @Model.PageTitle</p>
+<table class="table table-bordered w-25">
+    <tr>
+        <th>
+            Speakers
+        </th>
+    </tr>
+    @foreach(Speaker _speaker in Model.Speakers)
+    {
+        <tr>
+            <td><a asp-action="Details" asp-route-name="@_speaker.SpeakerName"><img src=@_speaker.SpeakerImg style="width:20px"/></a></td>
+            <td>@_speaker.SpeakerName</td>
+        </tr>
+    }
+</table>

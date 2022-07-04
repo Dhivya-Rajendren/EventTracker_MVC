@@ -1,0 +1,32 @@
+﻿@model EventTracker_MVC.Models.Event
+
+
+
+<p class="alert alert-primary">Create a New Event </p>
+
+
+<form method="post">
+
+    <div class="w-25">
+
+   <input class="form-control m-3" asp-for="EventId" placeholder="Enter the Event Id"/>
+   <input class="form-control m-3" asp-for="EventName" placeholder="Enter the Event Name"/>
+   <input class="form-control m-3" asp-for="EventType" placeholder="Enter the Event Type"/>
+   <input class="form-control m-3" asp-for="EventDate" placeholder="Enter the Event Date"/>
+
+    </div>
+    <input type="submit" class="btn btn-primary" value="Add Event"/>
+
+</form>
+
+
+
+
+@if(ViewBag.Message==null)
+{
+
+}
+else
+{
+    <p>@ViewBag.Message</p>
+}

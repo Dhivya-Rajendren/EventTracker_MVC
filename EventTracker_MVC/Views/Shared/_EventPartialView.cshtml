@@ -1,0 +1,28 @@
+﻿@model Event
+
+@{
+    var showButtons = (bool)ViewData["Showbuttons"];
+}
+
+<div class="row">
+    <div class="col-sm-3">
+
+    <div class="card-header">
+@Model.EventName
+</div>
+<div class="card-body">
+    <img src=@Model.EventImg class="card-img-top" style="height:100px"/>
+    <p> @Model.EventType</p>
+    <p>@Model.EventDate</p>
+</div>
+    @if (showButtons)
+    {
+        <div class="card-footer">
+            <a asp-controller="Events" asp-action="Details" asp-route-id=@Model.EventId class="btn btn-primary">View</a>
+            <a href="#" class="btn btn-primary">Edit</a>
+            <a asp-controller="Events" asp-action="Delete" asp-route-id=@Model.EventId class="btn btn-primary">Delete</a>
+
+        </div>
+    }
+    </div>
+</div>
