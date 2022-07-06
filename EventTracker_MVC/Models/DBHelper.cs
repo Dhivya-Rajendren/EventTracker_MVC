@@ -17,6 +17,32 @@ namespace EventTracker_MVC.Models
 
         }
 
+public bool GetUserNameAndPassword(string userName, string password)
+        {
+            if (userName.Equals("DhivyaCK") && password.Equals("pass1"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public Event AddNewEvent(Event _event)
+        {
+            com = new SqlCommand("insert into Events values (" + _event.EventId + ",'" + _event.EventName + "','" + _event.EventType + "','" + _event.EventDate + "','/images/dCore.png')", con);
+         int n=   com.ExecuteNonQuery();
+            if (n>0)
+            {
+                return _event;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
         public List<Event> GetEvents()
         {
             List<Event> events = new List<Event>();

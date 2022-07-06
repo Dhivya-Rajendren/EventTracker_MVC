@@ -5,6 +5,6 @@
         List<Event> GetEvents();
 
         Event GetEventById(int id);
-
+        Event AddNewEvent(Event _event);
     }
 }

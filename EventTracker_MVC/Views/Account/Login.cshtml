@@ -1,0 +1,10 @@
+﻿@model EventTracker_MVC.Models.Login
+
+<form method="post" asp-action="Login">
+<div class="w-25" style="margin-top:100px;margin-left:100px">
+    <input type="hidden" asp-for="ReturnUrl"/>
+    <input asp-for="UserName" class="form-control m-3" required placeholder="Enter UserName"/>
+    <input asp-for="Password" class="form-control m-3" required placeholder="Enter Password"/>
+    <input type="submit" value="Login" class="btn btn-primary m-3"/>
+</div>
+</form>

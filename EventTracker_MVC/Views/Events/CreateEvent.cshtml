@@ -11,7 +11,12 @@
 
    <input class="form-control m-3" asp-for="EventId" placeholder="Enter the Event Id"/>
    <input class="form-control m-3" asp-for="EventName" placeholder="Enter the Event Name"/>
-   <input class="form-control m-3" asp-for="EventType" placeholder="Enter the Event Type"/>
+
+ <select id="ddlTypes" asp-items=@(IEnumerable<SelectListItem>)ViewBag.EventTypes class="form-control m-3" asp-for=EventType>
+     <option selected>Select Type</option>
+ </select>
+
+
    <input class="form-control m-3" asp-for="EventDate" placeholder="Enter the Event Date"/>
 
     </div>

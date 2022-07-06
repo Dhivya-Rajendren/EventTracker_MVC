@@ -1,9 +1,11 @@
 ﻿using EventTracker_MVC.Models;
 using EventTracker_MVC.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EventTracker_MVC.Controllers
 {
+   
     public class SpeakersController : Controller
     {
         List<Speaker> speakers = new List<Speaker>()
@@ -22,7 +24,7 @@ namespace EventTracker_MVC.Controllers
         public IActionResult Details(string name)
         {
             var sp = speakers.SingleOrDefault(s => s.SpeakerName.Equals(name));
-            return Json(sp);
+            return PartialView(sp);
         }
     }
 }
